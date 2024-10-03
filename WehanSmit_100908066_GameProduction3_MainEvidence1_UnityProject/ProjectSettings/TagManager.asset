@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Checkpoint
+  - Message
+  - CheckpointManager
+  - Location
+  - Track
+  - NotTrack
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - VFX
+  - Water
+  - UI
+  - Trails
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Trails
+    uniqueID: 1397373723
+    locked: 0
+  - name: VFX
+    uniqueID: 2615716909
+    locked: 0

@@ -40,7 +40,7 @@ public class Checkpoints_Position_Laps : MonoBehaviour
         for (int i = 0; i < PlayersPlaying; i++)
         {
             Players[i].SetActive(true);
-            Leaderboard.OnSpawn();
+            Leaderboard.OnSpawn(PlayersPlaying);
         }
         
         OrganiseRankings();

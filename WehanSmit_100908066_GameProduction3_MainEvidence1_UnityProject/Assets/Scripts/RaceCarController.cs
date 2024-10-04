@@ -33,16 +33,7 @@ public class RaceCarController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        
-        
-        
-        
         playerInfo = GetComponent<PlayerInfo>();
-        
-        
-        
-        
-
     }
 
     
@@ -57,12 +48,9 @@ public class RaceCarController : MonoBehaviour
 
     // Update is called once per frame
     void FixedUpdate()
-    {
-        
+    { 
         ApplyForce();
-        
         killOrthoVel();
-
         ApplySteering();
     }
     
@@ -90,14 +78,12 @@ public class RaceCarController : MonoBehaviour
            playerInfo.FinishedRace();
            playerInfo.hasFinished = true;
            gameObject.SetActive(false);
-           
        }
     }
 
     void ApplyForce()
     {
         velocityVsUp = Vector2.Dot(transform.up, rb.velocity);
-
         if (velocityVsUp > maxSpeed && accelInput > 0 && OnTrack)
         {
             return;
@@ -106,7 +92,6 @@ public class RaceCarController : MonoBehaviour
         {
             return;
         }
-
         if (rb.velocity.sqrMagnitude > maxSpeed * maxSpeed && accelInput > 0 && OnTrack)
         {
             return;
@@ -119,7 +104,6 @@ public class RaceCarController : MonoBehaviour
         {
             return;
         }
-
         if (rb.velocity.sqrMagnitude > ORmaxSpeed * maxSpeed && accelInput > 0 && !OnTrack)
         {
             return;
@@ -132,7 +116,6 @@ public class RaceCarController : MonoBehaviour
         {
             rb.drag = 0;
         }
-
         if (OnTrack)
         {
            Vector2 ForceVec = transform.up * accelInput * acceleration; 
@@ -143,9 +126,6 @@ public class RaceCarController : MonoBehaviour
             Vector2 ForceVec = transform.up * accelInput * ORacceleration; 
             rb.AddForce(ForceVec, ForceMode2D.Force);
         }
-        
-        
-        
     }
 
     public float GetLatVelocity()
@@ -162,12 +142,10 @@ public class RaceCarController : MonoBehaviour
             braking = true;
             return true;
         }
-
         if (Mathf.Abs(GetLatVelocity()) > 4f)
         {
             return true;
         }
-
         return false;
     }
 
@@ -191,7 +169,6 @@ public class RaceCarController : MonoBehaviour
     {
         Vector2 forVel = transform.up * Vector2.Dot(rb.velocity, transform.up);
         Vector2 rightVel = transform.right * Vector2.Dot(rb.velocity, transform.right);
-
         rb.velocity = forVel + rightVel * Driftvar;
     }
 
@@ -201,7 +178,6 @@ public class RaceCarController : MonoBehaviour
         {
             OnTrack = true;
         }
-
         if (other.CompareTag("NotTrack"))
         {
             OnTrack = false;
@@ -214,28 +190,23 @@ public class RaceCarController : MonoBehaviour
             {
                 playerInfo.playerCheckpointList[IDcheck.ID].hasPassedThrough = true;
                 playerInfo.playerCheckpointList[IDcheck.ID-1].hasPassedThrough = false;
-                
-                
                 playerInfo.CheckpointCount++;
                 if (playerInfo.playerCheckpointList[IDcheck.ID].isFinish)
                 {
                     playerInfo.LapCount++;
                     playerInfo.CheckpointCount = 0;
                 }
-
                 playerInfo.lastCheckpoint = IDcheck.ID;
             }
             else if (IDcheck.ID == 0 && playerInfo.playerCheckpointList[^1].hasPassedThrough)
             {
                 playerInfo.playerCheckpointList[IDcheck.ID].hasPassedThrough = true;
                 playerInfo.playerCheckpointList[^1].hasPassedThrough = false;
-                
                 playerInfo.CheckpointCount++;
                 if (playerInfo.playerCheckpointList[IDcheck.ID].isFinish)
                 {
                     playerInfo.LapCount++;
                 }
-
                 playerInfo.lastCheckpoint = IDcheck.ID;
             }
             else
@@ -251,7 +222,6 @@ public class RaceCarController : MonoBehaviour
         {
             OnTrack = false;
         }
-
         if (other.CompareTag("NotTrack"))
         {
             OnTrack = true;

@@ -6,7 +6,6 @@ public class Leaderboard : MonoBehaviour
 {
     public GameObject item;
     public List<GameObject> itemList = new List<GameObject>();
-
     public Checkpoints_Position_Laps CheckpointsPositionLaps;
     // Start is called before the first frame update
     
@@ -22,9 +21,11 @@ public class Leaderboard : MonoBehaviour
         }
     }
 
-    public void OnSpawn()
+    public void OnSpawn(int input)
     {
-        GameObject item1 = GameObject.Instantiate(item);
-        itemList.Add(item1);
+        for (int j = 0; j < input; j++)
+        {
+            itemList[j].SetActive(true);
+        }
     }
 }

@@ -55,21 +55,21 @@ public class PlayerInfo : MonoBehaviour
         distance = Vector2.Distance(transform.position,
             playerCheckpointList[lastCheckpoint + 1].CheckPoint.transform.position);
         distanceDelta = playerCheckpointList[lastCheckpoint].DistanceToNextCheckpoint - distance;
+        
         int i = 0;
-        i = 0;
         while (i <= CheckpointCount)
         {
             posValue += (100f / playerCheckpointList.Count);
         }
 
         i = 0;
-        if (i >= 0)
-        {
+        
             while (i <= LapCount)
             {
                 posValue += 100f;
+                i++;
             }
-        }
+        
 
         
 

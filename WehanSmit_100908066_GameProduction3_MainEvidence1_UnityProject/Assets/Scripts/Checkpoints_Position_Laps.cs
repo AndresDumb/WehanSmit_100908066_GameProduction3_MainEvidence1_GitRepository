@@ -27,12 +27,16 @@ public class Checkpoints_Position_Laps : MonoBehaviour
 
     public List<GameObject> Players = new List<GameObject>();
     public List<GameObject> Positions = new List<GameObject>();
-    public List<GameObject> Finished = new List<GameObject>();
+    
 
     
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PlayersPlaying++;
+        }
         for (int i = 0; i < PlayersPlaying; i++)
         {
             Players[i].SetActive(true);
@@ -94,9 +98,10 @@ public class Checkpoints_Position_Laps : MonoBehaviour
             Positions.Add(Players[Maxint]);
             for (int i = 0; i < Players.Count; i++)
             { 
-                if (!Players[i].GetComponent<PlayerInfo>().hasBeenUsed) 
+                PlayerInfo player = Players[i].GetComponent<PlayerInfo>();
+                if (player.hasBeenUsed) 
                 {
-                    Players[i].GetComponent<PlayerInfo>().hasBeenChecked = false; 
+                    player.hasBeenChecked = false; 
                 }
             }
             

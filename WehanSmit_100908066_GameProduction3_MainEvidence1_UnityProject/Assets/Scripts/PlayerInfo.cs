@@ -12,10 +12,10 @@ public class PlayerInfo : MonoBehaviour
     public string PlayerID;
     public int LapCount = -1;
     public int CheckpointCount;
-    private float distanceToNextCheckPoint;
+    
     public List<Checkpoint> playerCheckpointList = new List<Checkpoint>();
     public string MissedCheckpoint;
-    public bool alreadyadded = false;
+    
     public string RaceFinished;
     public float posValue = 0;
     
@@ -37,7 +37,7 @@ public class PlayerInfo : MonoBehaviour
 
     private void Update()
     {
-        checkpoints = GameObject.FindGameObjectWithTag("CheckpointManager").GetComponent<Checkpoints_Position_Laps>();
+        
         
         posValue = 0;
         if (checkpoints.goodToCopy  && !hasCopied)

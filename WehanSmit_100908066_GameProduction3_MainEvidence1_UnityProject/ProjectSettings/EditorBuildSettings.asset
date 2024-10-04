@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/BackUp.unity
     guid: 867bd39c8b4e94e828a726b903ca0589
   m_configObjects:
-    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 1fcd783f46c75471db869fd8f68b4eac, type: 2}
-    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 640acacec2fe440f39883b0b43108c98, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 2aa9ff34d0224404b93995b99eef0306, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: c96ebc0a7fa9f41e2b75a6222554d034, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: b7d8aab4735af49bd848cc0ad0ba2652, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 74b875932c7e94c4ca1f77b3ed3c8845, type: 3}

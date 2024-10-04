@@ -34,7 +34,7 @@ public class RaceCarController : MonoBehaviour
     void Awake()
     {
         
-        checkpoints = GameObject.FindGameObjectWithTag("CheckpointManager").GetComponent<Checkpoints_Position_Laps>();
+        
         
         
         playerInfo = GetComponent<PlayerInfo>();
@@ -89,7 +89,8 @@ public class RaceCarController : MonoBehaviour
        {
            playerInfo.FinishedRace();
            playerInfo.hasFinished = true;
-           checkpoints.Finished.Add(gameObject);
+           gameObject.SetActive(false);
+           
        }
     }
 
@@ -243,9 +244,7 @@ public class RaceCarController : MonoBehaviour
             }
         }
     }
-
     
-
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Track"))

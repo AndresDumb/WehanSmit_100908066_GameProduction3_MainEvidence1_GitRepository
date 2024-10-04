@@ -155,7 +155,7 @@ MonoBehaviour:
   goodToCopy: 0
   Output: {fileID: 602506939}
   OutputMaj: {fileID: 2119670847}
-  PlayersPlaying: 1
+  PlayersPlaying: 0
   Leaderboard: {fileID: 849822648}
   CheckpointList:
   - id: 0
@@ -189,7 +189,6 @@ MonoBehaviour:
   - {fileID: 629462922}
   - {fileID: 125030960}
   Positions: []
-  Finished: []
 --- !u!4 &66702059
 Transform:
   m_ObjectHideFlags: 0
@@ -217,6 +216,10 @@ PrefabInstance:
       propertyPath: PlayerID
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 259736029706365841, guid: d42dd02fde9e949c3bcaa5aad484596e, type: 3}
+      propertyPath: checkpoints
+      value: 
+      objectReference: {fileID: 66702058}
     - target: {fileID: 1626726157915093970, guid: d42dd02fde9e949c3bcaa5aad484596e, type: 3}
       propertyPath: m_Name
       value: Car_3
@@ -269,6 +272,10 @@ PrefabInstance:
       propertyPath: PlayerID
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6289763308658662440, guid: d42dd02fde9e949c3bcaa5aad484596e, type: 3}
+      propertyPath: checkpoints
+      value: 
+      objectReference: {fileID: 66702058}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -291,6 +298,10 @@ PrefabInstance:
       propertyPath: PlayerID
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 259736029706365841, guid: d42dd02fde9e949c3bcaa5aad484596e, type: 3}
+      propertyPath: checkpoints
+      value: 
+      objectReference: {fileID: 66702058}
     - target: {fileID: 1626726157915093970, guid: d42dd02fde9e949c3bcaa5aad484596e, type: 3}
       propertyPath: m_Name
       value: Car
@@ -347,6 +358,10 @@ PrefabInstance:
       propertyPath: PlayerID
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6289763308658662440, guid: d42dd02fde9e949c3bcaa5aad484596e, type: 3}
+      propertyPath: checkpoints
+      value: 
+      objectReference: {fileID: 66702058}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -478,6 +493,10 @@ PrefabInstance:
       propertyPath: PlayerID
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 259736029706365841, guid: d42dd02fde9e949c3bcaa5aad484596e, type: 3}
+      propertyPath: checkpoints
+      value: 
+      objectReference: {fileID: 66702058}
     - target: {fileID: 1626726157915093970, guid: d42dd02fde9e949c3bcaa5aad484596e, type: 3}
       propertyPath: m_Name
       value: Car_1
@@ -530,6 +549,10 @@ PrefabInstance:
       propertyPath: PlayerID
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6289763308658662440, guid: d42dd02fde9e949c3bcaa5aad484596e, type: 3}
+      propertyPath: checkpoints
+      value: 
+      objectReference: {fileID: 66702058}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -713,6 +736,10 @@ PrefabInstance:
       propertyPath: PlayerID
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 259736029706365841, guid: d42dd02fde9e949c3bcaa5aad484596e, type: 3}
+      propertyPath: checkpoints
+      value: 
+      objectReference: {fileID: 66702058}
     - target: {fileID: 1626726157915093970, guid: d42dd02fde9e949c3bcaa5aad484596e, type: 3}
       propertyPath: m_Name
       value: Car_2
@@ -765,6 +792,10 @@ PrefabInstance:
       propertyPath: PlayerID
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6289763308658662440, guid: d42dd02fde9e949c3bcaa5aad484596e, type: 3}
+      propertyPath: checkpoints
+      value: 
+      objectReference: {fileID: 66702058}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

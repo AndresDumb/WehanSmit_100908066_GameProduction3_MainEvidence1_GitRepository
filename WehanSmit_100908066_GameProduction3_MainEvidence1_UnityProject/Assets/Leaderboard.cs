@@ -21,11 +21,5 @@ public class Leaderboard : MonoBehaviour
         }
     }
 
-    public void OnSpawn(int input)
-    {
-        for (int j = 0; j < input; j++)
-        {
-            itemList[j].SetActive(true);
-        }
-    }
+    
 }

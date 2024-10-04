@@ -33,15 +33,7 @@ public class Checkpoints_Position_Laps : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            PlayersPlaying++;
-        }
-        for (int i = 0; i < PlayersPlaying; i++)
-        {
-            Players[i].SetActive(true);
-            Leaderboard.OnSpawn(PlayersPlaying);
-        }
+        
         
         OrganiseRankings();
         

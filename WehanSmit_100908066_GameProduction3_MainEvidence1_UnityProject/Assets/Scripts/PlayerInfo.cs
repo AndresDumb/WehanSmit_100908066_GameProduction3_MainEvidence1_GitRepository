@@ -12,8 +12,8 @@ public class PlayerInfo : MonoBehaviour
     public string PlayerID;
     public int LapCount = -1;
     public int CheckpointCount;
-    
-    public List<Checkpoint> playerCheckpointList = new List<Checkpoint>();
+
+    public Checkpoint[] playerCheckpointList;
     public string MissedCheckpoint;
     
     public string RaceFinished;
@@ -42,10 +42,7 @@ public class PlayerInfo : MonoBehaviour
         posValue = 0;
         if (checkpoints.goodToCopy  && !hasCopied)
         {
-            for (int j = 0; j < checkpoints.CheckpointList.Count; j++)
-            {
-                playerCheckpointList.Add(checkpoints.CheckpointList[j]);
-            }
+            checkpoints.CheckpointList.CopyTo(playerCheckpointList, 0);
 
             hasCopied = true;
 
@@ -59,7 +56,7 @@ public class PlayerInfo : MonoBehaviour
         int i = 0;
         while (i <= CheckpointCount)
         {
-            posValue += (100f / playerCheckpointList.Count);
+            posValue += (100f / playerCheckpointList.Length);
         }
 
         i = 0;
@@ -75,7 +72,7 @@ public class PlayerInfo : MonoBehaviour
 
         
 
-        posValue += (distanceDelta / playerCheckpointList[lastCheckpoint].DistanceToNextCheckpoint) * (100f / playerCheckpointList.Count);
+        posValue += (distanceDelta / playerCheckpointList[lastCheckpoint].DistanceToNextCheckpoint) * (100f / playerCheckpointList.Length);
     }
     public void CheckpointMissed()
     {

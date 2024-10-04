@@ -91,7 +91,7 @@ public class Checkpoints_Position_Laps : MonoBehaviour
             for (int i = 0; i < Players.Count; i++)
             { 
                 PlayerInfo player = Players[i].GetComponent<PlayerInfo>();
-                if (player.hasBeenUsed) 
+                if (!player.hasBeenUsed) 
                 {
                     player.hasBeenChecked = false; 
                 }

@@ -42,6 +42,7 @@ public class PlayerInfo : MonoBehaviour
         posValue = 0;
         if (checkpoints.goodToCopy  && !hasCopied)
         {
+            playerCheckpointList = new Checkpoint[checkpoints.CheckpointList.Count];
             checkpoints.CheckpointList.CopyTo(playerCheckpointList, 0);
 
             hasCopied = true;

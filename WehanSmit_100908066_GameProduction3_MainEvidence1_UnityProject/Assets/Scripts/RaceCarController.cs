@@ -25,7 +25,7 @@ public class RaceCarController : MonoBehaviour
     private float rotateAngle = 0;
     private float velocityVsUp = 0;
     public bool wasAdded = false;
-    
+    public Vector2 input;
     public Rigidbody2D rb;
     
     
@@ -56,23 +56,28 @@ public class RaceCarController : MonoBehaviour
     
     private void Update()
     {
-        Vector2 input = new Vector2();
+        
         switch (PlayerID)
         {
+                
             case 1:
                 input = new Vector2(Input.GetAxis("Horizontal_P1"), Input.GetAxis("Vertical_P1"));
+                SetVector(input);
                 break;
             case 2:
                 input = new Vector2(Input.GetAxis("Horizontal_P2"), Input.GetAxis("Vertical_P2"));
+                SetVector(input);
                 break;
             case 3:
                 input = new Vector2(Input.GetAxis("Horizontal_P3"), Input.GetAxis("Vertical_P3"));
+                SetVector(input);
                 break;
             case 4:
                 input = new Vector2(Input.GetAxis("Horizontal_P4"), Input.GetAxis("Vertical_P4"));
+                SetVector(input);
                 break;
         }
-                SetVector(input);
+                
        if (playerInfo.LapCount >= checkpoints.numberOfLaps && !playerInfo.hasFinished)
        {
            playerInfo.FinishedRace();

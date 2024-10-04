@@ -19,6 +19,8 @@ public class Checkpoints_Position_Laps : MonoBehaviour
     public bool goodToCopy = false;
     public Text Output;
     public Text OutputMaj;
+    public int PlayersPlaying;
+    public Leaderboard Leaderboard;
     
 
     public List<Checkpoint> CheckpointList = new List<Checkpoint>();
@@ -27,14 +29,15 @@ public class Checkpoints_Position_Laps : MonoBehaviour
     public List<GameObject> Positions = new List<GameObject>();
     public List<GameObject> Finished = new List<GameObject>();
 
-    public void OnSpawn(GameObject player)
-    {
-        
-        Players.Add(player);
-    }
+    
 
     private void Update()
     {
+        for (int i = 0; i < PlayersPlaying; i++)
+        {
+            Players[i].SetActive(true);
+            Leaderboard.OnSpawn();
+        }
         
         OrganiseRankings();
         
@@ -48,16 +51,7 @@ public class Checkpoints_Position_Laps : MonoBehaviour
 
     }
 
-    public string PlacementsString()
-    {
-        string Output = "";
-        for (int i = 0; i < Positions.Count; i++)
-        {
-            Output = Output + i.ToString() + ". " + Positions[i] + Environment.NewLine;
-        }
-
-        return Output;
-    }
+    
 
     private float CalcDistance(int i)
     {

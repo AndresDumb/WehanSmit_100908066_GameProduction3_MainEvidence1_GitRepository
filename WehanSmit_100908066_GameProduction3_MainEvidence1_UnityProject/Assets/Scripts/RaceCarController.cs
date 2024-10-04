@@ -9,9 +9,9 @@ public class RaceCarController : MonoBehaviour
 {
 
     public PlayerInfo playerInfo;
-   public SpawnLocal SpawnLocal;
-    public bool LocationSet = false;
+   
     public bool OnTrack;
+    public int PlayerID = 1;
 
     public Checkpoints_Position_Laps checkpoints;
     public float Driftvar = 0.95f;
@@ -24,35 +24,24 @@ public class RaceCarController : MonoBehaviour
     private float SteerInput = 0;
     private float rotateAngle = 0;
     private float velocityVsUp = 0;
+    public bool wasAdded = false;
+    
     public Rigidbody2D rb;
     
-    private TopDownCarInputs playerInputActions;
+    
     
     // Start is called before the first frame update
     void Awake()
     {
         
         checkpoints = GameObject.FindGameObjectWithTag("CheckpointManager").GetComponent<Checkpoints_Position_Laps>();
-        checkpoints.OnSpawn(gameObject);
-        SpawnLocal = GameObject.FindGameObjectWithTag("Location").GetComponent<SpawnLocal>();
-                if (!LocationSet)
-                {
-                    for (int i = 0; i < SpawnLocal.SpawnLocations.Count; i++)
-                    {
-                        if (!SpawnLocal.SpawnLocationsUsed[i])
-                        {
-                            transform.position = SpawnLocal.SpawnLocations[i].position;
-                            transform.rotation = SpawnLocal.SpawnLocations[i].rotation;
-                            SpawnLocal.SpawnLocationsUsed[i] = true;
-                            LocationSet = true;
-                        }
-                    } 
-                }
+        
+        
         playerInfo = GetComponent<PlayerInfo>();
         
-        playerInputActions = new TopDownCarInputs();
         
-        playerInputActions.Player.Drive.performed += Drive_performed;
+        
+        
 
     }
 
@@ -64,10 +53,7 @@ public class RaceCarController : MonoBehaviour
     }
     
 
-    void Drive_performed(InputAction.CallbackContext obj)
-    {
-        Debug.Log(obj);
-    }
+    
 
     // Update is called once per frame
     void FixedUpdate()
@@ -82,7 +68,22 @@ public class RaceCarController : MonoBehaviour
     
     private void Update()
     {
-        Vector2 input = playerInputActions.Player.Drive.ReadValue<Vector2>();
+        Vector2 input = new Vector2();
+        switch (PlayerID)
+        {
+            case 1:
+                input = new Vector2(Input.GetAxis("Horizontal_P1"), Input.GetAxis("Vertical_P1"));
+                break;
+            case 2:
+                input = new Vector2(Input.GetAxis("Horizontal_P2"), Input.GetAxis("Vertical_P2"));
+                break;
+            case 3:
+                input = new Vector2(Input.GetAxis("Horizontal_P3"), Input.GetAxis("Vertical_P3"));
+                break;
+            case 4:
+                input = new Vector2(Input.GetAxis("Horizontal_P4"), Input.GetAxis("Vertical_P4"));
+                break;
+        }
                 SetVector(input);
        if (playerInfo.LapCount >= checkpoints.numberOfLaps && !playerInfo.hasFinished)
        {
